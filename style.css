@@ -1,0 +1,170 @@
+body {
+  background-color: hsl(180deg 44% 93%);
+}
+
+#form2 > table > tr > td {
+  text-align: left;
+}
+
+#regForm {
+  /* background-color: #ffffff; */
+  width: 35%;
+  height: auto;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -40px;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+input {
+  padding: 19px;
+  width: 70%;
+  font-size: 17px;
+  font-family: Raleway;
+  margin: 10px;
+  border: none;
+  border-bottom: 1px solid gray;
+  background-color: none;
+}
+
+.tab {
+  display: none;
+}
+
+.step {
+  height: 15px;
+  width: 15px;
+  margin: -13px 2px 20px 0;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step.finish {
+  background-color: #66bfe1;
+}
+
+button {
+  padding: 5px;
+  background-color: #66bfe1;
+  border-radius: 8px;
+  color: #fff;
+  width: 104px;
+  height: 41px;
+  border: none;
+  margin-top: 40px;
+}
+
+.form-check {
+  display: flex;
+  width: 20%;
+}
+
+.vedioRecord {
+  display: inline;
+}
+
+#sig-canvas {
+  border: 2px dotted #cccccc;
+  border-radius: 15px;
+  cursor: crosshair;
+  margin-left: auto;
+  margin-right: auto;
+  width:320px;
+  height:160px;
+}
+
+#sig-image {
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+#rendomNumber {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.formValues {
+  width: 100%;
+  font-size: large;
+  font-weight: 500;
+  text-align: left; 
+  margin-left: 10%;
+}
+
+.ErrorMsg {
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 0;
+  color: red;
+}
+
+.checkbox{
+  width: 20px;
+  margin-left: -172px;
+}
+
+.tdCheckbox{
+  margin-left: -210px;
+}
+
+h2{
+  font-size: 23px; 
+  font-weight: 600;
+}
+
+h1{
+  font-family: serif;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 600px){
+  #regForm {
+    /* background-color: #ffffff; */
+    width: 90%;
+    height: auto;
+    margin-top: 30px;
+  }
+
+  #sig-canvas {
+    width:220px;
+    height:150px;
+  }
+
+  #sig-image {
+    width:220px;
+    height:150px;
+  }
+
+  .checkbox {
+    width: 20px;
+    margin-left: -108px;
+}
+
+  .fileupload{
+    margin-left: -57px;
+    width: 124%;
+    margin-right: 0px;
+  }
+
+  .tdCheckbox{
+    margin-left: -30px;
+  }
+
+  input {
+    width: 80%;
+  }
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Registration Form</h3>
+
+    <form id="regForm" action="">
+      <!-- form 1 -->
+      <div class="tab">
+        <h1>Basic information</h1>
+        <input type="text" id="name" placeholder="Name" required />
+        <p id="nameErr" class="ErrorMsg"></p>
+
+        <input type="number" id="age" placeholder="Age" required />
+        <p id="ageErr" class="ErrorMsg"></p>
+        
+        <input type="number" id="mobile" placeholder="Mobile" required />
+        <p id="mobileErr" class="ErrorMsg"></p>
+       
+        <input type="text" id="address" placeholder="Address" required />
+        <p id="addressErr" class="ErrorMsg"></p>
+       
+      </div>
+
+      <!-- form 2 -->
+      <div class="tab" style="width: 100%;">
+        <h1>Document verification</h1>
+        <div id="form2" style="width: 100%;">
+          <table>
+            <tr>
+              <td><label>PAN Card</label></td>
+              <td><input type="checkbox" id="pancard" name="document" onclick="showInput()" class="checkbox"/></td>
+              <td style="display: none;" id="checkbox1" class="tdCheckbox">
+                <input
+                class="fileupload"
+                type="file"
+                placeholder="Photo"
+                required
+                style="border-bottom: none !important; "
+              /></td>
+            </tr>
+            <tr>
+              <td><label>DrivingLicence</label></td>
+              <td><input type="checkbox" id="drivingLicence" name="document" onclick="showInput()" class="checkbox"/></td>
+              <td style="display: none;" id="checkbox2" class="tdCheckbox">
+                <input
+                type="file"
+                class="fileupload"
+                placeholder="Photo"
+                required
+                style="border-bottom: none !important"; 
+              /></td>
+            </tr>
+            <tr>
+              <td><label>PassPort</label></td>
+              <td><input type="checkbox" id="passport" name="document" onclick="showInput()" class="checkbox"/></td>
+              <td style="display: none;"  id="checkbox3" class="tdCheckbox">
+                <input
+                type="file"
+                class="fileupload"
+                placeholder="Photo"
+                required
+                style="border-bottom: none !important; "
+              /></td>
+            </tr>
+            <tr>
+              <td><label>Upload Your Photo</label></td>
+              <td>
+                <input
+                  type="file"
+                  id="photo"
+                  placeholder="Photo"
+                  required
+                  style="border-bottom: none !important;"
+                />
+                <p id="photoErr" class="ErrorMsg"></p>
+              </td>
+            </tr>
+            <tr>
+              <td><label>Aadhar Card</label></td>
+              <td>
+                <input
+                  id="aadharCard"
+                  type="text"
+                  placeholder=" XXXX XXXX XXXX "
+                  required
+                  style="border-bottom: none !important; "
+                />
+                <p id="AadharCardErr" class="ErrorMsg"></p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- form 3 -->
+      <div class="tab">
+        <h1>Video verification</h1>
+        <div>
+          <h4 style="font-size: x-large">Your verification Code is :</h4>
+          <h2 id="rendomNumber"></h2>
+          <div class="vedioRecord">
+            <!-- <button type="button" id="start-camera">Start Camera</button> -->
+            <button type="button" id="start-record">Start Recording</button>
+            <button type="button" id="stop-record">Stop Recording</button>
+            <a type="button" id="download-video" download="test.webm"
+              >Download Video</a
+            >
+            <video id="video" width="40%" height="30%" autoplay style="margin-top: 20px; margin-bottom: -30px;"></video>
+          </div>
+        </div>
+      </div>
+
+      <!-- form 4 -->
+      <div class="tab">
+        <h1>Signature verification</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div id="btnDiv">
+                <!-- <button type="button" id="signBtn" name="signBtn">sign</button> -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <img
+                      id="sig-image"
+                      src=""
+                      alt="Your signature will go here!"
+                    />
+                  </div>
+                </div>
+              </div>
+              <canvas
+                id="sig-canvas"
+                style="display: none"
+                
+              ></canvas>
+            </div>
+          </div>
+          <div class="row" id="esignatre">
+            <div class="col-md-12" style="flex-wrap: wrap">
+              <button class="btn btn-default" type="button" id="sig-clearBtn">
+                Clear
+              </button>
+              <button class="btn btn-primary" type="button" id="sig-submitBtn">
+                Submit
+              </button>
+              <button class="btn btn-default" type="button" id="sig-editBtn">
+                Edit
+              </button>
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+
+      <!-- form 5 -->
+      <div class="tab">
+        <div>
+          <h1>All information from First page to last page</h1>
+
+          <div>
+            <h2>First Page</h2>
+            <table class="formValues">
+              <tr>
+                <td><label>Name</label></td>
+                <td><p id="nameValue"></p></td>
+              </tr>
+              <tr>
+                <td><label>age</label></td>
+                <td><p id="ageValue"></p></td>
+              </tr>
+              <tr>
+                <td><label>Mobile</label></td>
+                <td><p id="mobileValue"></p></td>
+              </tr>
+              <tr>
+                <td><label>Address</label></td>
+                <td><p id="cityValue"></p></td>
+              </tr>
+            </table>
+          </div>
+          
+          <div>
+            <h2>Second Page</h2>
+            <table class="formValues">
+              <tr>
+                <td><label>selected Document</label></td>
+                <td><p id="documentValue"></p></td>
+              </tr>
+              <tr>
+                <td><label>Adhar Card</label></td>
+                <td><p id="aadharCardValue"></p></td>
+              </tr>
+              <tr>
+                <td><label>Photo</label></td>
+                <td><p id="photoValue"></p></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div style="overflow: auto">
+        <div>
+          <button type="button" id="prevBtn" onclick="nextPrev(-1)">
+            Previous
+          </button>
+          <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        </div>
+      </div>
+
+      <!-- Circles which indicates the steps of the form: -->
+      <div style="text-align: center; margin-top: 40px">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+       
+      </div>
+    </form>
+
+    <script src="form.js"></script>
+  </body>
+</html>
